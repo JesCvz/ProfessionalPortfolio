@@ -1,0 +1,226 @@
+.experience-container {
+    max-width: 1200px;
+    margin: 6rem auto 4rem;
+    padding: 0 2rem;
+}
+
+.experience-title {
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1rem;
+    background: var(--gradient-secondary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.current-employer-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 3rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.current-employer-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-secondary);
+}
+
+.employer-logo {
+    max-height: 80px;
+    margin-bottom: 1rem;
+    filter: brightness(1.1);
+    transition: all 0.3s ease;
+}
+
+.employer-logo:hover {
+    transform: scale(1.05);
+}
+
+.projects-section {
+    margin-top: 2rem;
+}
+
+.projects-title {
+    font-size: 2.2rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--primary-text);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 3rem;
+}
+
+.project-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 2.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gradient-primary);
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+}
+
+.project-header {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.project-logo {
+    height: 80px;
+    max-width: 200px;
+    object-fit: contain;
+    filter: brightness(1.1);
+}
+
+.project-meta {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.project-meta h3 {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin: 0;
+    color: var(--secondary-text);
+    opacity: 0.8;
+}
+
+.project-meta p {
+    margin: 0;
+    color: var(--secondary-text);
+    font-size: 0.95rem;
+}
+
+.tech-stack {
+    margin-bottom: 2rem;
+}
+
+.tech-stack h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--accent-color);
+}
+
+.tech-stack p {
+    margin: 0;
+    color: var(--secondary-text);
+    line-height: 1.6;
+}
+
+.achievements {
+    margin-top: 1.5rem;
+}
+
+.achievements h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--primary-text);
+}
+
+.achievements ul {
+    margin: 0;
+    padding-left: 1.5rem;
+    list-style: none;
+}
+
+.achievements li {
+    position: relative;
+    margin-bottom: 1rem;
+    color: var(--secondary-text);
+    line-height: 1.6;
+    padding-left: 1rem;
+}
+
+.achievements li::before {
+    content: '▸';
+    position: absolute;
+    left: -0.5rem;
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .experience-container {
+        margin: 4rem auto 2rem;
+        padding: 0 1rem;
+    }
+    
+    .experience-title {
+        font-size: 2.5rem;
+    }
+    
+    .current-employer-card,
+    .project-card {
+        padding: 2rem;
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+    
+}
+
+@media (max-width: 480px) {
+    .experience-title {
+        font-size: 2rem;
+    }
+    
+    .projects-title {
+        font-size: 1.8rem;
+    }
+    
+    .current-employer-card,
+    .project-card {
+        padding: 1.5rem;
+    }
+    
+    .employer-logo {
+        max-height: 60px;
+    }
+    
+    .project-logo {
+        height: 100px;
+        max-width: 250px;
+    }
+    
+    .achievements li {
+        font-size: 0.9rem;
+    }
+}

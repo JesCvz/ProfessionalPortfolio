@@ -22,7 +22,7 @@ export const Welcome = ({ moveToElement }: WelcomeProps) => {
         <div className="introduction">
             <h1 className="hero-title">
                 I am <span className="name-highlight">Jesus Marroquin</span>,<br />
-                a Full Stack Engineer
+                a Sr Software Engineer
             </h1>
 
             <p className="subtitle">

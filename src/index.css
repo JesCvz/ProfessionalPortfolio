@@ -15,6 +15,7 @@
   --accent-hover: #364fc7;
   --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --gradient-tertiary: linear-gradient(135deg, #36d1dc 0%, #5b86e5 100%);
   
   /* Shadows */
   --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -56,6 +57,18 @@ body {
   padding: 0;
   background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 100%);
   min-height: 100vh;
+  /* iOS safe area support */
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
+
+/* Mobile background adjustment */
+@media (max-width: 768px) {
+  body {
+    background: linear-gradient(135deg, #2a2a4e 0%, #3a3a6e 100%);
+  }
 }
 
 /* Utility Classes */

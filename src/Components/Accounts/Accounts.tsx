@@ -1,4 +1,5 @@
 import './Accounts.css'
+import { Card } from '../Card/Card';
 import Ascendion from "../../assets/ascendionLogo.png"
 import Meta from "../../assets/Meta.png"
 import ATT from "../../assets/ATT.png"
@@ -66,19 +67,19 @@ export const Accounts = () => {
         <div className="experience-container">
             <h2 className="experience-title">Professional Experience</h2>
 
-            <div className="current-employer-card">
+            <Card variant="gradient-top" padding="large" borderRadius="large" className="current-employer-card-content">
                 <h3 style={{ color: 'var(--primary-text)', fontSize: '2rem', fontWeight: 600, marginBottom: '1rem' }}>
                     Current Employer
                 </h3>
                 <img className="employer-logo" src={Ascendion} alt="Ascendion" />
-            </div>
+            </Card>
 
             <div className="projects-section">
                 <h3 className="projects-title">Notable Projects & Achievements</h3>
 
                 <div className="projects-grid">
                     {projects.map((project, index) => (
-                        <div key={index} className="project-card">
+                        <Card key={index} variant="gradient-top" padding="medium" borderRadius="medium" hover={true} className="project-card-content">
                             <div className="project-header">
                                 <img className="project-logo" src={project.logo} alt={project.company} />
                             </div>
@@ -102,7 +103,7 @@ export const Accounts = () => {
                                     ))}
                                 </ul>
                             </div>
-                        </div>
+                        </Card>
                     ))}
                 </div>
             </div>

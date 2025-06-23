@@ -1,5 +1,6 @@
 import "./Skills.css";
 import { useState, useEffect, useRef, useMemo } from 'react';
+import { Card } from '../Card/Card';
 import PsychologyIcon from '@mui/icons-material/Psychology';
 import RecordVoiceOverIcon from '@mui/icons-material/RecordVoiceOver';
 import Diversity3Icon from '@mui/icons-material/Diversity3';
@@ -102,16 +103,20 @@ export const Skills = () => {
             
             <div className="skills-grid">
                 {skills.map((skill, index) => (
-                    <div 
+                    <Card 
                         key={index} 
-                        className={`skill-card ${visibleCards[index] ? 'skill-card-visible' : 'skill-card-hidden'}`}
+                        variant="minimal"
+                        hover={true}
+                        padding="medium"
+                        borderRadius="large"
+                        className={`skill-card-content ${visibleCards[index] ? 'skill-card-visible' : 'skill-card-hidden'}`}
                     >
                         <div className="skill-icon-wrapper">
                             <skill.icon className="skill-icon" />
                         </div>
                         <h3 className="skill-name">{skill.name}</h3>
                         <p className="skill-description">{skill.description}</p>
-                    </div>
+                    </Card>
                 ))}
             </div>
         </div>

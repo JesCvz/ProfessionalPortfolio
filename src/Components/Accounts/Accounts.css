@@ -1,6 +1,6 @@
 .experience-container {
     max-width: 1200px;
-    margin: 6rem auto 4rem;
+    margin: 4rem auto;
     padding: 0 2rem;
 }
 
@@ -8,33 +8,16 @@
     font-size: 3rem;
     font-weight: 700;
     text-align: center;
-    margin-bottom: 1rem;
-    background: var(--gradient-secondary);
+    margin-bottom: 3rem;
+    background: var(--gradient-tertiary);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
 
-.current-employer-card {
-    background: var(--card-bg);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 24px;
-    padding: 3rem;
+.current-employer-card-content {
     margin-bottom: 3rem;
     text-align: center;
-    position: relative;
-    overflow: hidden;
-}
-
-.current-employer-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: var(--gradient-secondary);
 }
 
 .employer-logo {
@@ -66,30 +49,8 @@
     gap: 3rem;
 }
 
-.project-card {
-    background: var(--card-bg);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    padding: 2.5rem;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.project-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: var(--gradient-primary);
-}
-
-.project-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-xl);
+.project-card-content {
+    /* Content styling handled by Card component */
 }
 
 .project-header {
@@ -177,7 +138,7 @@
 /* Responsive Design */
 @media (max-width: 768px) {
     .experience-container {
-        margin: 4rem auto 2rem;
+        margin: 4rem auto;
         padding: 0 1rem;
     }
     
@@ -185,10 +146,6 @@
         font-size: 2.5rem;
     }
     
-    .current-employer-card,
-    .project-card {
-        padding: 2rem;
-    }
     
     .projects-grid {
         grid-template-columns: 1fr;
@@ -206,10 +163,6 @@
         font-size: 1.8rem;
     }
     
-    .current-employer-card,
-    .project-card {
-        padding: 1.5rem;
-    }
     
     .employer-logo {
         max-height: 60px;

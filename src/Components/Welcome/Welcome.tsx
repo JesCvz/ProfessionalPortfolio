@@ -2,12 +2,14 @@ import "./Welcome.css";
 import DownloadIcon from '@mui/icons-material/Download';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import PDF from '../../assets/Jesus Marroquin CV (2025)_rev2.pdf'
+import { useEffect, useState } from 'react';
 
 interface WelcomeProps {
     moveToElement: () => void;
 }
 
 export const Welcome = ({ moveToElement }: WelcomeProps) => {
+    const [isScrolled, setIsScrolled] = useState(false);
 
     const handleDownload = () => {
         console.log(PDF);
@@ -17,6 +19,21 @@ export const Welcome = ({ moveToElement }: WelcomeProps) => {
         a.click();
         a.remove();
     }
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            setIsScrolled(scrollTop > 0);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    console.log(isScrolled)
 
     return (
         <div className="introduction">
@@ -36,9 +53,27 @@ export const Welcome = ({ moveToElement }: WelcomeProps) => {
                 </button>
                 <button onClick={() => handleDownload()} className="btn-secondary">
                     <DownloadIcon sx={{ marginRight: 1 }} />
-                    Download CV
+                    <span className="btn-text-desktop">Download&nbsp;</span>CV
                 </button>
             </div>
+            
+            {/* Mobile scroll indicator */}
+            <div style={{
+                    transitionProperty: "opacity",
+                    transitionDuration: "0.2s",
+                    transitionTimingFunction: "ease",
+                    opacity: isScrolled ? 0 : 1
+                }}>
+                <div 
+                    className="mobile-scroll-indicator"
+                >
+                    <div className="scroll-arrow" onClick={moveToElement}>
+                        <ArrowDownwardIcon />
+                    </div>
+                    <p className="scroll-text">Scroll to explore</p>
+                </div>
+            </div>
+            
         </div>
     )
 }

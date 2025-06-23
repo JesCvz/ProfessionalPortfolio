@@ -1,10 +1,11 @@
 import './Profile.css';
 import JesusPhoto from '../../assets/jesus.jpg';
+import { Card } from '../Card/Card';
 
 export const Profile = () => {
     return (
         <div className='profile-container'>
-            <div className='profile-card'>
+            <Card variant='gradient-top' padding='large' borderRadius='large' className='profile-card-content'>
                 <div className='profile-image-container'>
                     <img className='profile-image' src={JesusPhoto} alt="Jesus Marroquin" />
                 </div>
@@ -23,7 +24,7 @@ export const Profile = () => {
                         allocation, and delivered successful outcomes across multiple projects.
                     </p>
                 </div>
-            </div>
+            </Card>
         </div>
     )
 }

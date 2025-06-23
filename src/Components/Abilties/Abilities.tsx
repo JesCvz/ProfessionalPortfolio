@@ -1,4 +1,5 @@
 import './Abilities.css';
+import { Card } from '../Card/Card';
 import ReactImage from '../../assets/React-icon.svg.png';
 import Angular from '../../assets/Angular_full_color_logo.svg.png';
 import PHP from '../../assets/php.png';
@@ -30,8 +31,8 @@ export const Abilities = () => {
 
     return (
         <div className="abilities-container">
-            <div className="abilities-card">
-                <h2 className="abilities-title">Technical Proficiencies</h2>
+            <h2 className="abilities-title">Technical Proficiencies</h2>
+            <Card variant="gradient-top" padding="large" borderRadius="large" className="abilities-card-content">
                 
                 <div className="tech-section">
                     <h3 className="tech-category-title">
@@ -77,7 +78,7 @@ export const Abilities = () => {
                         ))}
                     </div>
                 </div>
-            </div>
+            </Card>
         </div>
     );
 }

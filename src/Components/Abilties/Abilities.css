@@ -4,26 +4,8 @@
     padding: 0 2rem;
 }
 
-.abilities-card {
-    background: var(--card-bg);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 24px;
-    padding: 3rem;
-    box-shadow: var(--shadow-xl);
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.abilities-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: var(--gradient-secondary);
+.abilities-card-content {
+    /* Content styling handled by Card component */
 }
 
 .abilities-title {
@@ -135,9 +117,6 @@
         padding: 0 1rem;
     }
     
-    .abilities-card {
-        padding: 2rem;
-    }
     
     .abilities-title {
         font-size: 2.5rem;
@@ -164,9 +143,6 @@
 }
 
 @media (max-width: 480px) {
-    .abilities-card {
-        padding: 1.5rem;
-    }
     
     .abilities-title {
         font-size: 2rem;

@@ -25,6 +25,143 @@
     z-index: -1;
 }
 
+/* Enhanced welcome radial effect for mobile */
+@media (max-width: 768px) {
+    .introduction {
+        transform: translateY(-80px); /* Move higher toward top */
+        padding: 2rem 1.5rem; /* Reduced padding */
+        justify-content: flex-start; /* Align toward top */
+        padding-top: 25vh; /* Position in upper portion of screen */
+    }
+    
+    .hero-title {
+        font-size: clamp(2rem, 4vw, 3rem); /* Smaller text on mobile */
+    }
+    
+    .subtitle {
+        font-size: 1.2rem; /* Smaller subtitle */
+        margin-bottom: 2rem; /* Less margin */
+    }
+    
+    .cta-buttons {
+        gap: 1rem; /* Smaller gap between buttons */
+    }
+    
+    .btn-primary {
+        display: none !important; /* Hide explore button on mobile */
+    }
+    
+    .btn-secondary {
+        padding: 0.6rem 1.2rem; /* Smaller padding */
+        font-size: 0.8rem; /* Smaller text */
+        min-width: auto; /* Allow buttons to be compact */
+    }
+    
+    .btn-text-desktop {
+        display: none; /* Hide "Download" text on mobile */
+    }
+    
+    .cta-buttons {
+        justify-content: center; /* Center the single CV button */
+    }
+    
+    .mobile-scroll-indicator {
+        display: flex !important; /* Override desktop hiding */
+        flex-direction: column;
+        align-items: center;
+        margin-top: 2.5rem;
+        gap: 0.8rem;
+        opacity: 0;
+        animation: fadeInUp 1s ease-out 2s forwards;
+    }
+    
+    @keyframes fadeInUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    .scroll-text {
+        font-size: 0.9rem;
+        color: var(--secondary-text);
+        margin: 0;
+        opacity: 0.9;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+    }
+    
+    .scroll-arrow {
+        color: var(--secondary-text);
+        animation: float 2s ease-in-out infinite;
+        opacity: 0.8;
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+    
+    .scroll-arrow:hover {
+        opacity: 1;
+        color: var(--primary-text);
+        transform: translateY(-2px);
+    }
+    
+    @keyframes float {
+        0%, 100% {
+            transform: translateY(0px);
+        }
+        50% {
+            transform: translateY(2px);
+        }
+    }
+    
+    .introduction::after {
+        background: radial-gradient(ellipse at center, rgba(76, 110, 245, 0.3) 0%, transparent 60%);
+        opacity: 0.8;
+    }
+    
+    @keyframes breathe {
+        0%, 100% {
+            opacity: 0.6;
+            transform: scale(1);
+        }
+        50% {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .introduction {
+        transform: translateY(-100px); /* Move even higher on small screens */
+        padding: 1.5rem 1rem; /* Minimal padding */
+        padding-top: 20vh; /* Position in upper portion */
+    }
+    
+    .hero-title {
+        font-size: clamp(1.8rem, 4vw, 2.5rem); /* Even smaller on small screens */
+    }
+    
+    .subtitle {
+        font-size: 1rem; /* Smaller subtitle for small screens */
+        margin-bottom: 1.5rem;
+    }
+    
+    .cta-buttons {
+        gap: 0.8rem; /* Even smaller gap */
+    }
+    
+    .btn-secondary {
+        padding: 0.5rem 1rem; /* Even more compact padding */
+        font-size: 0.75rem; /* Smaller text for small screens */
+        border-radius: 25px; /* Slightly less rounded for compact look */
+    }
+    
+    .scroll-text {
+        font-size: 0.8rem;
+    }
+}
+
 @keyframes breathe {
     0%, 100% {
         opacity: 0.4;
@@ -69,6 +206,10 @@
     justify-content: center;
     opacity: 0;
     animation: fadeInUp 1s ease-out 1.5s forwards;
+}
+
+.mobile-scroll-indicator {
+    display: none; /* Hidden on desktop */
 }
 
 .btn-primary {
@@ -152,5 +293,6 @@
 
 @keyframes float {
     0% { transform: translateY(0px); }
-    100% { transform: translateY(-100px); }
+    30% { transform: translateY(-10px); }
+    60% { transform: translateY(0px); }
 }

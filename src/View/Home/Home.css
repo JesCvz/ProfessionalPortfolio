@@ -27,7 +27,6 @@
 .section-divider {
     height: 2px;
     background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
-    margin: 6rem 0;
     opacity: 0.3;
 }
 
